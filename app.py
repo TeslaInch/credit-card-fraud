@@ -9,7 +9,7 @@ model = joblib.load("models/model.pkl")
 # Load dataset sample for dropdown examples
 @st.cache_data
 def load_data():
-    df = pd.read_csv("creditcard.csv")
+    df = pd.read_csv("creditcard_small.csv")
     df['Amount'] = (df['Amount'] - df['Amount'].mean()) / df['Amount'].std()
     df.drop("Time", axis=1, inplace=True)
     return df[df['Class'] == 0].sample(5, random_state=42).reset_index(drop=True)

@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report, roc_auc_score
 import joblib
 
 # Load & use 10% of the data only
-df = pd.read_csv('creditcard.csv')
+df = pd.read_csv('creditcard_small.csv')
 df = df.sample(frac=0.1, random_state=42)  # FAST
 
 # Preprocess the data
